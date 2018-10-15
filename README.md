@@ -1,97 +1,108 @@
-# Huong dan git 
+# Hướng dẫn sử dụng git
+## Thiết lập ban đầu
+`$ git config --global user.name "<Tên người dùng>"`
 
--------------------------------------------------------
-## Thiet lap ban dau 
-$ git config --global user.name "<Tên người dùng>"
-$ git config --global user.email "<Địa chỉ mail>"
+`$ git config --global user.email "<Địa chỉ mail>"`
 
-## Note:  --global la thiet lap dung cho toan he thong. bo di neu ban chi can thiet lap rieng cho file cua minh 
+> Lưu ý: --global là thiết lập cho toàn hệ thống. Bỏ đi nếu bạn chỉ cần thiết lập riêng cho file của mình
 
-## Thiet lap trinh soan thao 
-$ git config --global core.editor <ten phan mem soan thao>
-
-## Phan mem so sanh su thay doi 
-$ git config --global merge.tool vimdiff
-
-## In mau cho phan xuat ra cua git 
-$ git config --global color.ui auto
-
-## Kiem tra cau hinh 
-$ git config --list
-$ git config {key}
-
-## Tro giup
-$ git help <verb>
-$ git <verb> --help
-$ man git-<verb>
-
-------------------------------------------------------
-## Khoi tao kho chua thu muc  git
-$ git init
-
-## Sao chep kho chua thu muc git
-$ git clone [url]
-----------------------------------------------------
-## Kiem tra trang thai tap tin
-$ git status
-
-## Theo doi cac tap tin moi sau lan commit truoc
-$ git add <ten file>
-$ git add .
-
-## Commit thay doi 
-$ git commit -m ""
+* **Thiết lập trình soạn thảo**
  
--Them -a vao commit se bo qua buoc git add 
+`$ git config --global core.editor <ten phan mem soan thao>`
+
+* **Thiết lập phần mềm so sánh sự thay đổi**
+
+`$ git config --global merge.tool vimdiff`
+
+* **In màu cho phần xuất ra của git**
+ 
+`$ git config --global color.ui auto`
+
+## Kiểm tra cấu hình và trợ giúp 
+`$ git config --list`
+
+`$ git config {key}`
+
+`$ git help <verb>`
+
+`$ git <verb> --help`
+
+`$ man git-<verb>`
+
+## Tạo một kho chứa git
+* **Khởi tạo kho chứa**
+
+`$ git init`
+
+* **Sao chép từ một kho chứa**
+
+`$ git clone [url]`
+
+## Kiểm tra trạng thái tập tin
+`$ git status`
+
+## Theo dõi các tập tin mới từ lần commit trước
+`$ git add <ten file>`
+
+`$ git add .`
+
+## Commit thay đổi 
+`$ git commit -m ""`
+ 
+* Them -a vào commit sẽ bỏ qua bước `git add` 
 
 ## Kiem tra lich su thay doi
 $ git log
------------------------------------------------------
+
 ## Bo qua tap tin theo doi bang lenh
 $ git rm --cached <ten file>
-##  Bo qua tap tin dung .gitignore
-Note : cach viet file .gitignore
 
-- Dong trong hoac co dau "#" se duoc bo qua
-- Mau co ket thuc bang "/" de chi dinh mot thu muc
-- Khong theo doi cac tap tin co duoi "*"
-- Phu dinh lenh bang cach them dau "!" vao truoc
---------------------------------
-## Vi Du
-[**Smart metering**](https://git-scm.com/book/vi/v1/C%C6%A1-B%E1%BA%A3n-V%E1%BB%81-Git-Xem-L%E1%BB%8Bch-S%E1%BB%AD-Commit)
+##  Bỏ qua tập tin theo dõi bằng file .gitignore
 
-# a comment - dòng này được bo qua
-# không theo dõi tập tin có đuôi .a 
-*.a
-# nhưng theo dõi tập lib.a, mặc dù bạn đang bỏ qua tất cả tập tin .a ở trên
-!lib.a
-# chỉ bỏ qua tập TODO ở thư mục gốc, chứ không phải ở các thư mục con subdir/TODO
-/TODO
-# bỏ qua tất cả tập tin trong thư mục build/
-build/
-# bỏ qua doc/notes.txt, không phải doc/server/arch.txt
-doc/*.txt
+> **Cách viết file .gitignore:**
+
+- Dòng trống hoặc có dấuu "#" sẽ được bỏ qua.
+- Mẫu có kết thúc bằng "/" để chỉ định một thư mục
+- Không theo dõi tập tin bằng "*" ở đầu câu.
+- Phủ định lênh bằng cách thêm "!" vào trước
+
+**Ví dụ :**
+
+`# a comment` - dòng này được bỏ qua
+
+`*.a` - không theo dõi tập tin có đuôi .a `
+
+`!lib.a` - theo dõi tập lib.a, mặc dù bạn đang bỏ qua tất cả tập tin .a ở trên
+
+`/TODO` - chỉ bỏ qua tập TODO ở thư mục gốc, chứ không phải ở các thư mục con subdir/TODO
+
+`build/` - bỏ qua tất cả các file trong thư mục biuld
+
+`doc/server/arch.txt`       
+`doc/*.txt` - bỏ qua doc/notes.txt, không phải 
 # bỏ qua tất cả tập .txt trong thư mục doc/
 doc/**/*.txt
 
-------------------------------
-# Kiem tra chi tiet thay doi
-$ git diff
-$ git diff --cached
------------------------------------------------
-# Xoa tap tin
-$ git rm <ten file>
+## Kiểm tra chi tiết thay đổi
+`$ git diff`
 
-# Di chuyen file ,noi dung file ma khong can phai dung git add lai
-$ git mv file_from file_to
+`$ git diff --cached`
 
-------------------------------------------------
-# Xem lich su commit
-$ git log
+##Xóa tập tin và bỏ theo dõi
+`$ git rm <ten file>`
 
--p : hien thi noi dung thay doi
---word-diff : xem thay doi mot cach tong quat
---stat : xem thay doi mot cach tom tat
+##Di chuyển file,đổi tên file mà không phải dùng lại lệnh `git add`##
+
+`$ git mv file_from file_to`
+
+
+# Xem lịch sử commit
+`$ git log`
+
+`-p` : hien thi noi dung thay doi
+
+`--word-diff` : xem thay doi mot cach tong quat
+`--stat` : xem thay doi mot cach tom tat
 
 $ git log --pretty=oneline
 
@@ -99,7 +110,9 @@ Ngoai "oneline" con co short, full, và fuller
 
 $ git log --pretty=format:"%h - %an, %ar : %s"
 
-%H	Mã băm của commit
+Cột 1 Hàng 1 | Cột 2 | Cột 3| Cột 4 
+|----|
+
 %h	Mã băm của commit ngắn gọn hơn
 %T	Băm hiển thị dạng cây
 %t	Băm hiển thị dạng cây ngắn gọn hơn
