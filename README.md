@@ -1,65 +1,66 @@
 # Huong dan git 
 
 -------------------------------------------------------
-# Thiet lap ban dau 
+## Thiet lap ban dau 
 $ git config --global user.name "<Tên người dùng>"
 $ git config --global user.email "<Địa chỉ mail>"
 
-# Note:  --global la thiet lap dung cho toan he thong. bo di neu ban chi can thiet lap rieng cho file cua minh 
+## Note:  --global la thiet lap dung cho toan he thong. bo di neu ban chi can thiet lap rieng cho file cua minh 
 
-# Thiet lap trinh soan thao 
+## Thiet lap trinh soan thao 
 $ git config --global core.editor <ten phan mem soan thao>
 
-# Phan mem so sanh su thay doi 
+## Phan mem so sanh su thay doi 
 $ git config --global merge.tool vimdiff
 
-# In mau cho phan xuat ra cua git 
+## In mau cho phan xuat ra cua git 
 $ git config --global color.ui auto
 
-# Kiem tra cau hinh 
+## Kiem tra cau hinh 
 $ git config --list
 $ git config {key}
 
-# Tro giup
+## Tro giup
 $ git help <verb>
 $ git <verb> --help
 $ man git-<verb>
 
 ------------------------------------------------------
-# Khoi tao kho chua thu muc  git
+## Khoi tao kho chua thu muc  git
 $ git init
 
-# Sao chep kho chua thu muc git
+## Sao chep kho chua thu muc git
 $ git clone [url]
 ----------------------------------------------------
-# Kiem tra trang thai tap tin
+## Kiem tra trang thai tap tin
 $ git status
 
-# Theo doi cac tap tin moi sau lan commit truoc
+## Theo doi cac tap tin moi sau lan commit truoc
 $ git add <ten file>
 $ git add .
 
-# Commit thay doi 
+## Commit thay doi 
 $ git commit -m ""
  
 -Them -a vao commit se bo qua buoc git add 
 
-# Kiem tra lich su thay doi
+## Kiem tra lich su thay doi
 $ git log
 -----------------------------------------------------
-# Bo qua tap tin theo doi bang lenh
+## Bo qua tap tin theo doi bang lenh
 $ git rm --cached <ten file>
-# Bo qua tap tin dung .gitignore
-# Note : cach viet file .gitignore
+##  Bo qua tap tin dung .gitignore
+Note : cach viet file .gitignore
 
 - Dong trong hoac co dau "#" se duoc bo qua
 - Mau co ket thuc bang "/" de chi dinh mot thu muc
 - Khong theo doi cac tap tin co duoi "*"
 - Phu dinh lenh bang cach them dau "!" vao truoc
 --------------------------------
-# Vi Du
+## Vi Du
+[**Smart metering**](https://git-scm.com/book/vi/v1/C%C6%A1-B%E1%BA%A3n-V%E1%BB%81-Git-Xem-L%E1%BB%8Bch-S%E1%BB%AD-Commit)
 
-# a comment - dòng này được bỏ qua
+# a comment - dòng này được bo qua
 # không theo dõi tập tin có đuôi .a 
 *.a
 # nhưng theo dõi tập lib.a, mặc dù bạn đang bỏ qua tất cả tập tin .a ở trên
