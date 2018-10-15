@@ -1,11 +1,11 @@
-#huong dan git 
+#Huong dan git 
 
--------------------------------------------------------
+------------------------------------------------------------
 #Thiet lap ban dau 
 $ git config --global user.name "<Tên người dùng>"
 $ git config --global user.email "<Địa chỉ mail>"
 
-#Note:  --global la thiet lap dung cho toan he thong. bo di neu ban chi can thiet lap rieng cho file cua minh 
+Note:  --global la thiet lap dung cho toan he thong. bo di neu ban chi can thiet lap rieng cho file cua minh 
 
 #Thiet lap trinh soan thao 
 $ git config --global core.editor <ten phan mem soan thao>
@@ -37,6 +37,7 @@ $ git status
 
 #Theo doi cac tap tin moi sau lan commit truoc
 $ git add <ten file>
+$ git add .
 
 #commit thay doi 
 $ git commit -m ""
