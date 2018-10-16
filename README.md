@@ -49,7 +49,10 @@
 ## Commit thay đổi 
 `$ git commit -m ""`
  
-* Them -a vào commit sẽ bỏ qua bước `git add` 
+* Thêm -a vào commit sẽ bỏ qua bước `git add` 
+
+* Thêm --amend để thực hiện lại commit
+* Để loại bỏ tập tin ra khỏi commit ta dùng lệnh `$ git reset <ten_file>` 
 
 ## Bỏ qua tập tin theo dõi bằng lệnh
 $ git rm --cached <ten file>
@@ -93,10 +96,10 @@ doc/**/*.txt
 `$ git mv file_from file_to`
 
 
-# Xem lịch sử commit
+## Xem lịch sử commit
 - `$ git log` 
 
-![Gitlog](https://i.imgur.com/t3pPSem.png)
+![Gitlog](https://i.imgur.com/3Jv4LLO.png)
 
 - `$ git log --pretty=oneline`
 
@@ -104,10 +107,42 @@ doc/**/*.txt
 
 - `$ git log --pretty=format:"%h - %an, %ar : %s"`
 
-![Fomart](https://i.imgur.com/qZEueT5.jpg)
+![Fomart](https://i.imgur.com/UHKSsn4.png)
 
 - **In ra lịch sử  thay đổi** 
 
 `$ git log --since=2.weeks`
 
-![Since](https://i.imgur.com/hNnXkFm.png)
+![Since](https://i.imgur.com/HAoE1bW.png)
+
+# Liên kết các kho chứa từ xa 
+
+- ** Để  thêm các kho chứa từ xa : **
+
+`$ git remote add [shortname] [url]`
+
+- ** Xem các kho chứa đã được liên kết : **
+
+` $ git remote -v `
+
+- ** Update file dự án từ kho chứa về  local : **
+
+`$ git fetch [remote-name]`
+
+`$ git pull [tên-máy-chủ] [tên-nhánh]`
+
+- ** Đẩy dữ liệu từ local lên máy chủ từ xa : **
+
+`$ git push [tên-máy-chủ] [tên-nhánh]`
+
+- ** Kiểm tra máy chủ , kho chứa trung tâm: **
+
+`$ git remote show [tên-máy-chủ]`
+
+- ** Đổi tên và xóa kho chứa **
+
+`$ git remote rename <tên-cũ> <tên-mới>`
+
+`$ git remote rm <tên-kho-chứa>`
+  
+
