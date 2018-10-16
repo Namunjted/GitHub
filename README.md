@@ -51,10 +51,7 @@
  
 * Them -a vào commit sẽ bỏ qua bước `git add` 
 
-## Kiem tra lich su thay doi
-$ git log
-
-## Bo qua tap tin theo doi bang lenh
+## Bỏ qua tập tin theo dõi bằng lệnh
 $ git rm --cached <ten file>
 
 ##  Bỏ qua tập tin theo dõi bằng file .gitignore
@@ -80,7 +77,7 @@ $ git rm --cached <ten file>
 
 `doc/server/arch.txt`       
 `doc/*.txt` - bỏ qua doc/notes.txt, không phải 
-# bỏ qua tất cả tập .txt trong thư mục doc/
+bỏ qua tất cả tập .txt trong thư mục doc/
 doc/**/*.txt
 
 ## Kiểm tra chi tiết thay đổi
@@ -97,23 +94,20 @@ doc/**/*.txt
 
 
 # Xem lịch sử commit
-`$ git log`
+- `$ git log` 
 
-`-p` : hien thi noi dung thay doi
+![Gitlog](https://i.imgur.com/t3pPSem.png)
 
-`--word-diff` : xem thay doi mot cach tong quat
-
-`--stat` : xem thay doi mot cach tom tat
-
-`$ git log --pretty=oneline`
+- `$ git log --pretty=oneline`
 
 > Ngoài `oneline` con co `short`,`full` và `fuller`
 
-`$ git log --pretty=format:"%h - %an, %ar : %s"`
+- `$ git log --pretty=format:"%h - %an, %ar : %s"`
 
- 
-## In lich su thay doi 
+![Fomart](https://i.imgur.com/qZEueT5.jpg)
+
+- **In ra lịch sử  thay đổi** 
+
 `$ git log --since=2.weeks`
 
- 
-
+![Since](https://i.imgur.com/hNnXkFm.png)
